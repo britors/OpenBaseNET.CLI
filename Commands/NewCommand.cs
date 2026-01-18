@@ -47,9 +47,11 @@ public class NewCommand : AsyncCommand<NewSettings>
 
                 using var process = Process.Start(processInfo);
                 
-                if (process == null)
-                    throw new Exception("Falha ao iniciar o processo 'dotnet'.");
-
+            if(process == null)
+                {
+                    AnsiConsole.MarkupLine("[red]Erro:[/] Não foi possível iniciar o processo dotnet.");
+                    return;
+                }
                 // Passamos o token para o WaitForExitAsync para respeitar cancelamentos (Ctrl+C)
                 await process.WaitForExitAsync(cancellationToken);
 
