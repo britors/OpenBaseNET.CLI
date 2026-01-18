@@ -5,7 +5,7 @@ permissions:
 on:
   push:
     branches:
-      - main # Ou a branch que você usa como principal
+      - main # Disparar na branch main
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
@@ -20,7 +20,7 @@ jobs:
 
       # O passo de pack agora cuidará do restore e build
       - name: Empacotar e preparar para publicação
-        run: dotnet pack  --configOpenBaseNetSqlServerCLI.csprojuration Release -p:NoDefaultExcludes=true -o ./packages
+        run: dotnet pack OpenBaseNetSqlServerCLI.csproj --configuration Release -p:NoDefaultExcludes=true -o ./packages
 
       - name: Publicar no NuGet
         env:
