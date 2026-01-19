@@ -15,7 +15,7 @@ public class HelpCommand : AsyncCommand<HelpSettings>
     {
         // Cabeçalho estilizado
         AnsiConsole.Write(new FigletText("OpenBase").Color(Color.Blue));
-        AnsiConsole.MarkupLine("[grey]CLI de produtividade para Arquitetura Limpa e SQL Server[/]");
+        AnsiConsole.MarkupLine("[grey]CLI de produtividade para Arquitetura Limpa[/]");
         AnsiConsole.WriteLine();
 
         // Tabela de Comandos
