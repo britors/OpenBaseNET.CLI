@@ -1,8 +1,6 @@
-# OpenBase SQL Server CLI 🚀
+# OpenBase  CLI 🚀
 
-[![NuGet Version](https://img.shields.io/nuget/v/w3ti.OpenBaseSqlServer.Cli.svg)](https://www.nuget.org/packages/w3ti.OpenBaseSqlServer.Cli/)
-
-A interface de linha de comando oficial para o ecossistema **OpenBase**. Projetada para acelerar a criação de projetos baseados em **Clean Architecture**, **.NET 10** e **SQL Server**.
+A interface de linha de comando oficial para o ecossistema **OpenBase**.
 
 ---
 
@@ -11,7 +9,7 @@ A interface de linha de comando oficial para o ecossistema **OpenBase**. Projeta
 A OpenBase CLI é distribuída como uma ferramenta global do .NET. Para instalar, execute:
 
 ```bash
-dotnet tool install -g w3ti.OpenBaseSqlServer.Cli
+dotnet tool install -g w3ti.OpenBase.Cli
 
 🚀 Como usar
 1. Preparar o ambiente
@@ -43,12 +41,7 @@ update Sincroniza a CLI e os templates com a última versão.openbase update
 version Exibe o SO, Arquitetura e versões do ecossistema.openbase version
 help Guia completo de argumentos e flags.openbase help
 💻 Requisitos
-
     SDK .NET 10 ou superior.
-
-    Node.js & Angular CLI (Opcional, para projetos com Front-end).
-
-    SQL Server (Local ou via Docker).
 
 🛡️ Segurança e Compatibilidade
 
@@ -64,4 +57,4 @@ Esta ferramenta foi desenvolvida com foco em segurança e é monitorada pelo Son
 
 Distribuído sob a licença MIT. Veja LICENSE.txt para mais informações.
 
-Desenvolvido com ❤️ por w3ti.
+Desenvolvido com ❤️ por Rodrigo Brito <rodrigo@w3ti.com.br>.
