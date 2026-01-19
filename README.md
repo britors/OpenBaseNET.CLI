@@ -1,72 +1,67 @@
 # OpenBaseNET SQL Server CLI 🚀
 
-A **OpenBaseNET CLI** é a interface oficial de linha de comando desenvolvida para acelerar a criação de APIs robustas utilizando o template **OpenBaseNET SQL Server**.
+[![NuGet Version](https://img.shields.io/nuget/v/w3ti.OpenBaseNETSqlServer.Cli.svg)](https://www.nuget.org/packages/w3ti.OpenBaseNETSqlServer.Cli/)
 
-Com esta ferramenta, você pula a configuração repetitiva de arquitetura e foca no desenvolvimento das suas regras de negócio.
-
-[![NuGet Version](https://img.shields.io/nuget/v/w3ti.OpenBaseNETSqlServer.Cli.svg)](https://www.nuget.org/packages/w3ti.OpenBaseNETSqlServer.Cli)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.txt)
-[![.NET 10](https://img.shields.io/badge/.NET-10.0-blue.svg)](https://dotnet.microsoft.com/download/dotnet/10.0)
+A interface de linha de comando oficial para o ecossistema **OpenBaseNET**. Projetada para acelerar a criação de projetos baseados em **Clean Architecture**, **.NET 10** e **SQL Server**.
 
 ---
 
-## 🌟 Vantagens
+## 🛠️ Instalação
 
-Esta CLI garante que seu projeto comece com as melhores práticas de mercado:
-
-* **Clean Architecture:** Separação clara entre Domínio, Aplicação e Infraestrutura.
-* **Repository Pattern:** Abstração de dados utilizando EF Core e Dapper.
-* **Resiliência:** Estratégias de retry nativas para SQL Server.
-* **Modernidade:** Totalmente otimizado para **.NET 10**.
-
----
-
-## 🛠 Instalação
-
-A CLI é instalada como uma ferramenta global do .NET. Execute o comando abaixo:
+A OpenBaseNET CLI é distribuída como uma ferramenta global do .NET. Para instalar, execute:
 
 ```bash
 dotnet tool install -g w3ti.OpenBaseNETSqlServer.Cli
 
-Dica: Caso já possua uma versão instalada, utilize o comando update:
+🚀 Como usar
+1. Preparar o ambiente
 
-dotnet tool update -g w3ti.OpenBaseNETSqlServer.Cli
-
-🚀 Comandos Disponíveis
-1. Instalar Template
-Configura o ambiente com o template de projeto oficial.
-
+Instale os templates oficiais de arquitetura necessários para a CLI:
 Bash
+
 openbase install
-2. Criar Novo Projeto
-Gera uma nova Web API com todas as camadas da solução configuradas.
 
+2. Criar um novo projeto
+
+Gere uma solução completa com API, Infraestrutura e suporte a SQL Server:
 Bash
-openbase new NomeDoMeuProjeto
-3. Atualizar
-Atualiza simultaneamente a própria CLI e os templates registrados.
 
+openbase new --type api --template sqlserver --name MeuProjeto
+
+3. Verificar o ambiente
+
+Consulte as informações do Sistema Operacional e as versões do .NET e Angular instaladas:
 Bash
-openbase update
-🏗 Camadas Geradas
-Ao criar um projeto, a solução é estruturada da seguinte forma:
 
-Domain: Entidades e interfaces de contrato.
+openbase version
 
-Application: Serviços, DTOs e mapeamentos.
+📋 Comandos Disponíveis
+Comando Descrição Exemplo
+install Instala ou atualiza os templates NuGet necessários.openbase install
+new Cria um novo projeto a partir dos templates.openbase new --name X
+update Sincroniza a CLI e os templates com a última versão.openbase update
+version Exibe o SO, Arquitetura e versões do ecossistema.openbase version
+help Guia completo de argumentos e flags.openbase help
+💻 Requisitos
 
-Infra.Data: Contexto do banco de dados e repositórios.
+    SDK .NET 10 ou superior.
 
-Presentation.Api: Web API com Swagger, Logging e DI prontos.
+    Node.js & Angular CLI (Opcional, para projetos com Front-end).
 
-📅 Próximos Passos (Roadmap)
-[ ] Scaffolding: Comando openbase add <Entity> para gerar CRUD completo.
+    SQL Server (Local ou via Docker).
 
-[ ] Injeção de Dependência Automática.
+🛡️ Segurança e Compatibilidade
 
-[ ] Suporte a PostgreSQL.
+Esta ferramenta foi desenvolvida com foco em segurança e é monitorada pelo SonarCloud.
+
+    Multiplataforma: Suporte nativo para Windows, macOS (Intel/Apple Silicon) e Linux (Fedora/Ubuntu).
+
+    Resiliência: Detecta automaticamente instalações globais e gerenciadas via NVM (Node Version Manager).
+
+    Segurança: Execução de processos protegida contra injeção de comandos (S4036 compliance).
 
 📄 Licença
-Distribuído sob a licença MIT. Veja o arquivo LICENSE.txt para detalhes.
 
-Desenvolvido por Rodrigo Brito (w3ti)
+Distribuído sob a licença MIT. Veja LICENSE.txt para mais informações.
+
+Desenvolvido com ❤️ por w3ti.
