@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Runtime.InteropServices;
 
 namespace OpenBaseNetSqlServerCLI.Helpers;
@@ -29,5 +30,32 @@ public static class DotNet
         .FirstOrDefault(File.Exists);
 
     return envPath ?? fileName;
+  }
+
+  public static string GetDotnetVersion()
+  {
+    try
+    {
+      var psi = new ProcessStartInfo(GetDotnetPath(), "--version")
+      {
+        CreateNoWindow = true,
+        UseShellExecute = false,
+        RedirectStandardOutput = true
+      };
+
+      var process = Process.Start(psi);
+      if (process != null)
+      {
+        var output = process.StandardOutput.ReadToEnd();
+        process.WaitForExit();
+        return output.Trim();
+      }
+    }
+    catch
+    {
+      // Ignorar erros e retornar versão desconhecida
+    }
+
+    return "--";
   }
 }

@@ -41,11 +41,20 @@ public class UpdateCommand : AsyncCommand<UpdateSettings>
                 });
         }
 
-        // 2. Atualizar a própria CLI (Auto-update sugerido)
-        AnsiConsole.MarkupLine("[yellow]Dica:[/] Para garantir que a CLI esteja na última versão, execute:");
-        AnsiConsole.MarkupLine("[grey]dotnet tool update -g w3ti.OpenBaseNETSqlServer.Cli[/]");
-
         AnsiConsole.MarkupLine("\n[green]Sucesso:[/] Todos os templates estão sincronizados e atualizados!");
+
+        // 2. Atualizar a própria CLI (Auto-update sugerido)
+        var psiTool = new ProcessStartInfo(Helpers.DotNet.GetDotnetPath(), "tool update -g w3ti.OpenBaseNETSqlServer.Cli")
+        {
+            CreateNoWindow = true,
+            UseShellExecute = false,
+            RedirectStandardOutput = true
+        };
+
+        var tool = Process.Start(psiTool);
+        if (tool != null) await tool.WaitForExitAsync(cancellationToken);
+
+        AnsiConsole.MarkupLine("\n[green]Sucesso:[/] OpenBaseNET CLI está atualizada!");
         return 0;
     }
 }

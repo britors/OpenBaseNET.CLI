@@ -13,6 +13,7 @@ public class VersionCommand : AsyncCommand<VersionSettings>
 {
     public override async Task<int> ExecuteAsync([NotNull] CommandContext context, [NotNull] VersionSettings settings, CancellationToken cancellationToken)
     {
+        var dotnetVersion = Helpers.DotNet.GetDotnetVersion();
         var toolVersion = Assembly.GetExecutingAssembly().GetName().Version?.ToString(3) ?? "--";
         AnsiConsole.Write(new FigletText("OpenBaseNET").Color(Color.Blue));
 
@@ -20,6 +21,7 @@ public class VersionCommand : AsyncCommand<VersionSettings>
         table.AddColumn("[bold]Componente[/]");
         table.AddColumn("[bold]Versão Instalada[/]");
 
+        table.AddRow(".NET SDK", $"[green]{dotnetVersion}[/]");
         table.AddRow("OpenBase CLI", $"[green]{toolVersion}[/]");
     
         AnsiConsole.Write(table);
