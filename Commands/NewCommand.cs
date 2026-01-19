@@ -4,7 +4,7 @@ using Spectre.Console;
 using Spectre.Console.Cli;
 using System.ComponentModel;
 
-namespace OpenBaseSqlServerCLI.Commands;
+namespace OpenBase.Commands;
 
 public class NewSettings : CommandSettings
 {

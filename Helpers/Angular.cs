@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-namespace OpenBaseSqlServerCLI.Helpers;
+namespace OpenBase.Helpers;
 
 public static class Angular
 {

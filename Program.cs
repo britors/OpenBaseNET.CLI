@@ -1,4 +1,4 @@
-﻿using OpenBaseSqlServerCLI.Commands;
+﻿using OpenBase.Commands;
 using Spectre.Console.Cli;
 
 var app = new CommandApp();

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using Spectre.Console;
 using Spectre.Console.Cli;
 
-namespace OpenBaseSqlServerCLI.Commands;
+namespace OpenBase.Commands;
 
 public class VersionSettings : CommandSettings
 {

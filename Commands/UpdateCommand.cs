@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using Spectre.Console;
 using Spectre.Console.Cli;
 
-namespace OpenBaseSqlServerCLI.Commands;
+namespace OpenBase.Commands;
 
 public class UpdateSettings : CommandSettings
 {
