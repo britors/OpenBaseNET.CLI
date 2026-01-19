@@ -16,7 +16,6 @@ public class UpdateCommand : AsyncCommand<UpdateSettings>
         var officialPackages = new[]
         {
             "w3ti.OpenBaseNET.SQLServer.Template",
-            "w3ti.OpenBaseNET.MongoDB.Template" // Exemplo de pacote futuro
         };
 
         AnsiConsole.MarkupLine("[blue]Sincronizando ecossistema OpenBaseNET...[/]");
